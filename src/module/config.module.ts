@@ -1,6 +1,7 @@
 import { DynamicModule, Module, Global } from '@nestjs/common';
 import { ConfigService } from './config.service';
 import { DotenvOptions } from 'dotenv';
+import ConfigRegisterProvider from './config.register.provider';
 
 @Global()
 @Module({})
@@ -18,9 +19,10 @@ export class ConfigModule {
         return ConfigService.load(glob, options);
       },
     };
+
     return {
       module: ConfigModule,
-      providers: [configProvider],
+      providers: [configProvider, ConfigRegisterProvider],
       exports: [configProvider],
     };
   }
