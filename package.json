@@ -1,9 +1,9 @@
 {
   "name": "nestjs-config",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Easy to use Nest congifuration module",
   "main": "dist/index.js",
-  "repository": "git@github.com:bashleigh/nestjs-config.git",
+  "repository": "git@github.com:nestjs-community/nestjs-config.git",
   "license": "MIT",
   "authors": [
     {
@@ -29,8 +29,10 @@
     "format": "prettier **/**/*.ts --ignore-path ./.prettierignore --write && git status",
     "prepublish": "npm run format && npm run build"
   },
+  "peerDependencies": {
+    "@nestjs/common": "^5.1.0"
+  },
   "dependencies": {
-    "@nestjs/common": "^5.1.0",
     "dotenv": "^6.0.0",
     "glob": "^7.1.2",
     "lodash.get": "^4.4.2",
@@ -39,10 +41,12 @@
     "rxjs": "^6.0.0"
   },
   "devDependencies": {
+    "@nestjs/common": "^5.1.0",
     "@nestjs/core": "^5.1.0",
     "@nestjs/testing": "^5.1.0",
     "@types/dotenv": "^4.0.3",
     "@types/glob": "^5.0.35",
+    "@types/jest": "^23.3.0",
     "coveralls": "^3.0.2",
     "jest": "^23.3.0",
     "prettier": "^1.13.7",
